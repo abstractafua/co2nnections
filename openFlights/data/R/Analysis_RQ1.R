@@ -5,14 +5,14 @@ library(igraph)
 # For all following Analysis Questions the below loading and cleaning will have already occurred.
 
 # Load Airports 
-airports <- read.csv("/Users/afuafrempong/co2nnections/openFlights/data/airports.dat", header = FALSE)
+airports <- read.csv("/Users/afuafrempong/co2nnections/data/airports.dat", header = FALSE)
 # Make column names/headings
 colnames(airports) <- c("AirportID","Name","City","Country","IATA","ICAO",
                         "Latitude","Longitude","Altitude","Timezone",
                         "DST","TzDB","Type","Source") # These column names are infered from https://openflights.org/data.php
 
 # Load routes
-routes <- read.csv("/Users/afuafrempong/co2nnections/openFlights/data/routes.dat", header = FALSE)
+routes <- read.csv("/Users/afuafrempong/co2nnections/data/routes.dat", header = FALSE)
 # Make column names/headings
 colnames(routes) <- c("Airline","AirlineID","SourceAirport","SourceID",
                       "DestAirport","DestID","Codeshare","Stops","Equipment")
@@ -22,7 +22,7 @@ colnames(routes) <- c("Airline","AirlineID","SourceAirport","SourceID",
 clean_routes <- routes[routes$SourceAirport != "\\N" & routes$DestAirport != "\\N" & routes$AirlineID != "\\N", ]
 
 # For airports I want to remove any row that has empty airport IATA 3 letter code since it may not be verified
-clean_airports <- airports[ airports$IATA != "\\N", ]
+clean_airports <- airports[airports$IATA != "\\N", ]
 
 # Keep routes that share/have paired IATA values with airport list since some have ICAO
 clean_routes <- clean_routes[clean_routes$SourceAirport %in% clean_airports$IATA & clean_routes$DestAirport %in% clean_airports$IATA,]
