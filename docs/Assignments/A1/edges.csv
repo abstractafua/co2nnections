@@ -1,0 +1,106 @@
+airport1,airport2
+Toronto,Vancouver
+Toronto,Calgary
+Toronto,Montreal
+Toronto,Edmonton
+Toronto,Ottawa
+Toronto,Winnipeg
+Toronto,Halifax
+Toronto,Qubec City
+Toronto,Saskatoon
+Toronto,Kelowna
+Toronto,Victoria
+Toronto,Regina
+Toronto,St. John's
+Toronto,Thunder Bay
+Toronto,London
+Toronto,Charlottetown
+Toronto,Moncton
+Toronto,Whitehorse
+Toronto,Fort McMurray
+Toronto,Fredericton
+Toronto,Yellowknife
+Toronto,Deer Lake
+Vancouver,Calgary
+Vancouver,Montreal
+Vancouver,Edmonton
+Vancouver,Ottawa
+Vancouver,Winnipeg
+Vancouver,Halifax
+Vancouver,Qubec City
+Vancouver,Saskatoon
+Vancouver,Kelowna
+Vancouver,Victoria
+Vancouver,Regina
+Vancouver,St. John's
+Vancouver,Whitehorse
+Vancouver,Yellowknife
+Montreal,Calgary
+Montreal,Edmonton
+Montreal,Ottawa
+Montreal,Winnipeg
+Montreal,Halifax
+Montreal,Qubec City
+Montreal,Saskatoon
+Montreal,Victoria
+Montreal,Regina
+Montreal,St. John's
+Montreal,Charlottetown
+Montreal,Moncton
+Montreal,Fredericton
+Edmonton,Ottawa
+Edmonton,Winnipeg
+Edmonton,Halifax
+Edmonton,Saskatoon
+Edmonton,Kelowna
+Edmonton,Victoria
+Edmonton,Regina
+Edmonton,Whitehorse
+Edmonton,Fort McMurray
+Edmonton,Yellowknife
+Edmonton,Prince George
+Edmonton,Grande Prairie
+Ottawa,Winnipeg
+Ottawa,Halifax
+Ottawa,Qubec City
+Ottawa,Victoria
+Ottawa,St. John's
+Ottawa,Thunder Bay
+Ottawa,Charlottetown
+Ottawa,Moncton
+Ottawa,Fredericton
+Ottawa,Iqaluit
+Winnipeg,Halifax
+Winnipeg,Saskatoon
+Winnipeg,Regina
+Winnipeg,Thunder Bay
+Halifax,St. John's
+Kelowna,Victoria
+Kelowna,Prince George
+Victoria,Kamloops
+Victoria,Prince George
+Victoria,Whitehorse
+Regina,Saskatoon
+London,Calgary
+Moncton,Deer Lake
+Moncton,Calgary
+Fort McMurray,Calgary
+Kamloops,Vancouver
+Calgary,Kamloops
+Fredericton,Calgary
+Yellowknife,Whitehorse
+Yellowknife,Calgary
+Prince George,Vancouver
+Prince George,Calgary
+Deer Lake,Montreal
+Deer Lake,Halifax
+Deer Lake,St. John's
+Calgary,Grande Prairie
+Sandspit,Vancouver
+Qikiqtarjuaq,Iqaluit
+Calgary,Saskatoon
+Calgary,Winnipeg
+Calgary,Regina
+Calgary,Edmonton
+Iqaluit,Ottawa
+Iqaluit,Winnipeg
