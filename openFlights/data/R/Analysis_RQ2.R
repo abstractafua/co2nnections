@@ -11,11 +11,23 @@
 # Minimize Scope : Extract a list of canadian airports and canadian routes
 canadian_airports <- clean_airports[clean_airports$Country == "Canada", ]
 
+# Remove duplicates
+canadian_airports <- canadian_airports[!duplicated(canadian_airports$IATA), ]
+
+vertices <- data.frame(name = unique(canadian_airports$IATA))
+
 # Classifying routes as canadian if both the source and destination are in the list of canadian airports
-canadian_routes <- edges[edges$from %in% canadian_airports$IATA &
-                           edges$to %in% canadian_airports$IATA, ]
+canadian_routes <- clean_routes[clean_routes$SourceAirport %in% vertices$name &
+                                  clean_routes$DestAirport %in% vertices$name, ]
+
+edges <- data.frame(
+  
+  from =canadian_routes$SourceAirport,
+  to = canadian_routes$DestAirport)
+
+
 # Create graph object 
-canadian_airports_graph <- graph_from_data_frame(canadian_routes, directed = TRUE)
+canadian_airports_graph <- graph_from_data_frame(edges, vertices,  directed = TRUE)
 
 # Plot graph
 plot(canadian_airports_graph, 
@@ -27,7 +39,8 @@ plot(canadian_airports_graph,
      edge.arrow.size = 0.1,
      edge.arrow.width = 0.4,
      layout = layout_with_fr,
-     main = "Canadian Domestic Flight Network (Fruchterman-Reingold Layout)")
+     main = "Canadian Domestic Flight Network (Fruchterman-Reingold Layout)"
+     )
 
 
 # Save as csv for future reference
@@ -45,7 +58,6 @@ centrality_measures <- data.frame(
   Betweenness = betweenness_centrality,
   Closeness = closeness_centrality
 )
-
 
 # List top 5 airports by each centrality measure
 top_5_degree <- head(centrality_measures[order(centrality_measures$Degree, decreasing = TRUE), ], 5)

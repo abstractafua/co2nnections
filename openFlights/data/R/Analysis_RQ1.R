@@ -1,11 +1,10 @@
 library(igraph)
 
-# RQ 1 : What is the average degree of the worldwide airline directed network and what does that reveal about air connectivity?
-
-# For all following Analysis Questions the below loading and cleaning will have already occurred.
+# RQ 1 : What is the average degree of the worldwide airline directed network and what does it reveal about air connectivity?
 
 # Load Airports 
 airports <- read.csv("/Users/afuafrempong/co2nnections/data/airports.dat", header = FALSE)
+
 # Make column names/headings
 colnames(airports) <- c("AirportID","Name","City","Country","IATA","ICAO",
                         "Latitude","Longitude","Altitude","Timezone",
@@ -13,6 +12,7 @@ colnames(airports) <- c("AirportID","Name","City","Country","IATA","ICAO",
 
 # Load routes
 routes <- read.csv("/Users/afuafrempong/co2nnections/data/routes.dat", header = FALSE)
+
 # Make column names/headings
 colnames(routes) <- c("Airline","AirlineID","SourceAirport","SourceID",
                       "DestAirport","DestID","Codeshare","Stops","Equipment")
@@ -38,7 +38,7 @@ vertices <- data.frame(
   name = clean_airports$IATA
 )
 
-# Make graph from data frame
+# Make directed graph from data frame
 graph <- graph_from_data_frame(edges, vertices, directed = TRUE)
 
 # Plot graph
@@ -82,7 +82,6 @@ degree_table <- data.frame(
   Airport = V(graph)$name,
   in_degree = in_deg,
   out_degree = out_deg
-  
 )
 
 # Top departing airports sorted by in degree
@@ -109,27 +108,3 @@ hist(out_deg,
      main = "Out-Degree Distribution of Global Airline Network",
      xlab = "Out-Degree",
      col = "lightblue")
-
-# Plot top ten airports that are connected?
-
-
-# Research Q2 :Touch on basic centrality measures
-
-# Research Q3 : Assigning distance & calculate C02 emmision weights for routes
-
-
-
-
-
-
-# Research Q4 : Find communities...Optimize Routes maybe Use centrality measures to...find a less costly distance version?
-
-
-
-
-
-
-
-
-
-
